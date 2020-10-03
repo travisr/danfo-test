@@ -26,7 +26,7 @@
                     name: file.name
                 };
             });
-            files_df = new dfd.DataFrame(extension.container.files);
+            files_df = new dfd.DataFrame(files_array);
             files_df.plot("files_div").table( { 
                 layout: {
                     title: 'Acquisition Files',
