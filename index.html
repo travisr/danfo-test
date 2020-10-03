@@ -20,7 +20,7 @@
 
         Flywheel.initExtension().then((extension) => {
             console.log('extension\n', extension);
-            files_df = new dfd.DataFrame(extension.files);
+            files_df = new dfd.DataFrame(extension.container.files);
             files_df.plot("files_div").table( { 
                 layout: {
                     title: 'Acquisition Files',
