@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!--danfojs CDN -->
     <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+    <script src="https://cdn.flywheel.io/sdk/flywheel-sdk-0.5.0.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -16,7 +17,15 @@
     <div id="plot_div3"></div>
     <script>
 
-      var layout = {
+        Flywheel.initExtension().then((extension) => {
+            console.log('extension\n', extension);
+            extension.getFileText(extension.container, extension.file).then((text) => {
+                console.log(text);
+            });
+        });
+
+        
+        var layout = {
             title: 'Line and Scatter Plot',
             width: 500,
             height: 400
