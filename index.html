@@ -21,6 +21,11 @@
         Flywheel.initExtension().then((extension) => {
             console.log('extension\n', extension);
             console.log('extension container files\n', extension.container.files);
+            const files_array = extension.container.files.map((file) => {
+                return {
+                    name: file.name
+                };
+            });
             files_df = new dfd.DataFrame(extension.container.files);
             files_df.plot("files_div").table( { 
                 layout: {
