@@ -12,6 +12,7 @@
 
 <body>
 
+    <div id="files_div"></div>
     <div id="plot_div"></div>
     <div id="plot_div2"></div>
     <div id="plot_div3"></div>
@@ -19,8 +20,11 @@
 
         Flywheel.initExtension().then((extension) => {
             console.log('extension\n', extension);
-            extension.getFileText(extension.container, extension.file).then((text) => {
-                console.log(text);
+            files_df = new dfd.DataFrame(extension.files);
+            files_df.plot("files_div").table( { 
+                layout: {
+                    title: 'Acquisition Files',
+                }
             });
         });
 
