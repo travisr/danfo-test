@@ -20,6 +20,7 @@
 
         Flywheel.initExtension().then((extension) => {
             console.log('extension\n', extension);
+            console.log('extension container files\n', extension.container.files);
             files_df = new dfd.DataFrame(extension.container.files);
             files_df.plot("files_div").table( { 
                 layout: {
